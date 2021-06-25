@@ -1,11 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { ApolloProvider } from '@apollo/client';
 
-import Dashboard from './pages/dashboard';
+import client from './services/api';
+
+import configureStore from './store';
+
+import GlobalStyle from './styles';
+
+import Home from './pages/home';
+
+const store = configureStore();
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Dashboard />
-    </React.StrictMode>,
+    <ApolloProvider client={client}>
+        <Provider store={store}>
+            <React.StrictMode>
+                <GlobalStyle />
+                <Home />
+            </React.StrictMode>
+        </Provider>
+    </ApolloProvider>,
     document.getElementById('root')
 );

@@ -1,6 +1,12 @@
 import React from 'react';
 
-import { Container } from './styles';
+import {
+    Container,
+    MainCountryContainer,
+    Country,
+    Capital,
+    Flag
+} from './styles';
 
 export interface CardInterface {
     country: string;
@@ -9,5 +15,13 @@ export interface CardInterface {
 }
 
 export function Card({ country, capital, flag }: CardInterface) {
-    return <Container></Container>;
+    return (
+        <Container href='!#'>
+            <MainCountryContainer>
+                <Country>{country}</Country>
+                <Capital>{capital}</Capital>
+            </MainCountryContainer>
+            <Flag>{flag}</Flag>
+        </Container>
+    );
 }

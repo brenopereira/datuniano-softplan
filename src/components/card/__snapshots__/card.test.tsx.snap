@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Validate render Card component 1`] = `
+<a
+  className="sc-bdnxRM eZuSLG"
+  href="!#"
+>
+  <div
+    className="sc-gtsrHT hCzqRk"
+  >
+    <h2
+      className="sc-dlnjwi kTXiGI"
+    >
+      Brazil
+    </h2>
+    <div
+      className="sc-eCApnc"
+    >
+      🇧🇷
+    </div>
+  </div>
+  <h3
+    className="sc-hKFxyN gzZknm"
+  >
+    Brasília
+  </h3>
+</a>
+`;

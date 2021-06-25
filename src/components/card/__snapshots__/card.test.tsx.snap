@@ -61,7 +61,7 @@ exports[`Validate render Card component 1`] = `
 
 <a
   className="c0"
-  href="/country/Brazil"
+  href="/country/1"
 >
   <div
     className="c1"

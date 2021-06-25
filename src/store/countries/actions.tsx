@@ -1,9 +1,12 @@
 import { ActionCreator, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
+import client, { countryVar } from '../../services/api';
 
-import client from '../../services/api';
-
-import { COUNTRIES_QUERY, COUNTRY_FILTER } from '../../queries/countries';
+import {
+    COUNTRIES_QUERY,
+    COUNTRY_FILTER
+    // UPDATE_COUNTRY
+} from '../../queries/countries';
 
 import {
     CountryState,
@@ -36,6 +39,13 @@ function searchCountry(payload: string) {
 }
 
 function fetchSingleComplete(payload: Country) {
+    return {
+        type: COUNTRY_SINGLE_COMPLETE,
+        payload
+    };
+}
+
+function updateSingleCountry(payload: Country) {
     return {
         type: COUNTRY_SINGLE_COMPLETE,
         payload
@@ -83,5 +93,31 @@ export const countrySearchName: ActionCreator<
 > = (country: string) => {
     return async (dispatch: Dispatch) => {
         dispatch(searchCountry(country));
+    };
+};
+
+// export const updateCountryInfo: ActionCreator<
+//     ThunkAction<Promise<any>, CountryState, null, CountryActionTypes>
+// > = (id: string, country: Country) => {
+//     return async (dispatch: Dispatch) => {
+//         let abc = client.writeQuery({
+//             query: UPDATE_COUNTRY(id),
+//             data: {
+//                 country
+//             },
+//             variables: {
+//                 id
+//             }
+//         });
+
+//         console.log(abc);
+
+//         // dispatch(updateSingleCountry(country));
+//     };
+// };
+
+export const updateCountryInfo = (id: string, country: any) => {
+    return () => {
+        console.log(countryVar());
     };
 };

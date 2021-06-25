@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+# Projeto de consumo Apollo Cliente - API Countries
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esse projeto foi incializado utilizando [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Comandos disponiveis
 
-In the project directory, you can run:
+Neste projeto, você consegue utizar os seguintes comandos:
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Para rodar a aplicação em modo de desenvolvimento.\
+Abra [http://localhost:3000](http://localhost:3000) para visualizar no seu navegador o projeto.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ele irá inciar a execução dos testes craidos na aplicação somente dos componentes.\
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Irá gerar o build para produçãno no diretório final chamado `build`.\
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para visualizar o modo [desenvolvimento](https://datuniano-softplan.vercel.app/) clique para visualizar.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Observação quanto a publicação na Vercel, o projeto não está abrindo devido a API que é consumida não haver HTTPS, por isso em nenhum publish aberto, a aplicação consegue consumir devido a falta do HTTPS.
 
-### `yarn eject`
+## Algumas melhorias e pacotes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Github Actions: Foi inserido na aplicação e onde após enviar o push para o repositório, a ação é iniciada para fazer a validação como testes e build da aplicação, para verificar a integridade do projeto.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Styled-components: Devido a necessidade de criar uma interface, inseri no projeto o styled-components para facilitar o desenvolvimento e trazer a flexibilidade para criar as telas e elementos, bem como os componentes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Storybook: Inserido no projeto para iniciar a documentação dos componentes, devido o mesmo não haver outro estado de componente, foi somente inserido a sua renderização padrão (default) do storybook.

@@ -9,14 +9,15 @@ import {
 } from './styles';
 
 export interface CardInterface {
+    id: string;
     country: string;
     capital: string;
     flag: string;
 }
 
-export function Card({ country, capital, flag }: CardInterface) {
+export function Card({ id, country, capital, flag }: CardInterface) {
     return (
-        <Container href={'/country/' + country}>
+        <Container href={'/country/' + id}>
             <MainCountryContainer>
                 <Country>{country}</Country>
                 <Capital>{capital}</Capital>

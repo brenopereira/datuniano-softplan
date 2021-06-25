@@ -66,6 +66,7 @@ function Home() {
                 {country.countries.map((row: Country, index) => (
                     <Card
                         key={index}
+                        id={row._id}
                         country={row.name}
                         capital={row.capital}
                         flag={row.flag.emoji}

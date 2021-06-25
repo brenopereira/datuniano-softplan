@@ -6,7 +6,7 @@ import { Card } from '.';
 
 test('Validate render Card component', () => {
     const component = renderer.create(
-        <Card country='Brazil' capital='Brasília' flag='🇧🇷' />
+        <Card country='Brazil' capital='Brasília' flag='🇧🇷' id='1' />
     );
 
     let tree = component.toJSON();

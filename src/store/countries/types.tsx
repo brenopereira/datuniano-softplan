@@ -3,6 +3,7 @@ interface CountryTopLevel {
 }
 
 export interface Country {
+    _id: string;
     capital: string;
     name: string;
     population: number;

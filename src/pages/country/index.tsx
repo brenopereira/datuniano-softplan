@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { Loading } from '../../components';
@@ -7,16 +8,26 @@ import { AppState } from '../../store';
 import { getCountry } from '../../store/countries/actions';
 import { CountryState } from '../../store/countries/types';
 
-import { Container, Logo, PageTitle, Content, Paragraph } from './styles';
+import {
+    Container,
+    Logo,
+    PageTitle,
+    Content,
+    Paragraph,
+    BackTo
+} from './styles';
 
 interface AppProps {
     country: CountryState;
     getCountry: (country: string) => void;
+    match: any;
 }
 
 class CountryPage extends Component<AppProps> {
     componentDidMount = () => {
-        this.props.getCountry('Brazil');
+        const { country } = this.props.match.params;
+
+        this.props.getCountry(country);
     };
 
     render() {
@@ -24,9 +35,16 @@ class CountryPage extends Component<AppProps> {
 
         return (
             <Container>
-                <Logo src={require('../../assets/images/logo.svg').default} />
+                <Link to='/'>
+                    <Logo
+                        src={require('../../assets/images/logo.svg').default}
+                    />
+                </Link>
 
-                <PageTitle>{this.props.country.country?.name}</PageTitle>
+                <PageTitle>
+                    {this.props.country.country?.name}{' '}
+                    {this.props.country.country?.flag.emoji}
+                </PageTitle>
 
                 <Content>
                     <Paragraph>
@@ -44,6 +62,8 @@ class CountryPage extends Component<AppProps> {
                         m2. Na internet, o seu domínio possuí a extesão{' '}
                         {this.props.country.country?.topLevelDomains[0].name}
                     </Paragraph>
+
+                    <BackTo to='/'>Voltar para a lista de paises</BackTo>
                 </Content>
             </Container>
         );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { AppState } from '../../store';
@@ -37,7 +38,11 @@ class Home extends React.Component<AppProps> {
 
         return (
             <Container>
-                <Logo src={require('../../assets/images/logo.svg').default} />
+                <Link to='/'>
+                    <Logo
+                        src={require('../../assets/images/logo.svg').default}
+                    />
+                </Link>
 
                 <PageTitle>Listagem de Países</PageTitle>
 

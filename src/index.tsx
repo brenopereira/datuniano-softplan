@@ -9,8 +9,7 @@ import configureStore from './store';
 
 import GlobalStyle from './styles';
 
-// import Home from './pages/home';
-import CountryPage from './pages/country';
+import Routes from './routes';
 
 const store = configureStore();
 
@@ -18,7 +17,7 @@ ReactDOM.render(
     <Provider store={store}>
         <ApolloProvider client={client}>
             <GlobalStyle />
-            <CountryPage />
+            <Routes />
         </ApolloProvider>
     </Provider>,
     document.getElementById('root')

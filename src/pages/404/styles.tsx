@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
     width: 1140px;
@@ -35,21 +34,5 @@ export const Content = styled.div`
 export const Paragraph = styled.p`
     font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
-`;
-
-export const Domain = styled.span`
-    color: #5c5cff;
-    display: block;
-    font-weight: bold;
-`;
-
-export const BackTo = styled(Link)`
-    display: block;
-    margin: 20px auto 0;
-    background: #5c5cff;
-    color: #fff;
-    padding: 10px 25px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-family: 'Nunito Sans', sans-serif;
+    text-align: center;
 `;

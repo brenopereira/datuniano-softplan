@@ -16,7 +16,7 @@ export interface CardInterface {
 
 export function Card({ country, capital, flag }: CardInterface) {
     return (
-        <Container href='!#'>
+        <Container href={'/country/' + country}>
             <MainCountryContainer>
                 <Country>{country}</Country>
                 <Capital>{capital}</Capital>

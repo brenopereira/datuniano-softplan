@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
-import { gql } from '@apollo/client';
+import { useQuery, gql } from '@apollo/client';
 
 import client from '../../services/api';
 
@@ -33,30 +33,26 @@ function Home() {
 
     const dispatch: Dispatch<any> = useDispatch();
 
-    React.useEffect(() => {
-        dispatch(setLoadingCountries());
+    const QUERY = gql(`
+        query GetCountries {
+            Country {
+                capital
+                name
 
-        client
-            .query({
-                query: gql`
-                    query GetCountries {
-                        Country {
-                            capital
-                            name
+                flag {
+                    emoji
+                }
+            }
+        }
+    `);
 
-                            flag {
-                                emoji
-                            }
-                        }
-                    }
-                `
-            })
-            .then(result => {});
-    });
+    const { loading, error, data, client } = useQuery(QUERY);
 
-    // dispatch(setCountries(result.data.Country));
+    if (data) {
+        dispatch(setCountries(data.Country));
+    }
 
-    // if (country.loading) return <Loading />;
+    if (loading) return <Loading />;
 
     return (
         <Container>

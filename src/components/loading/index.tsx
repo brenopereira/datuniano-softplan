@@ -1,7 +1,9 @@
 import React from 'react';
 
+import { Container } from './styles';
+
 function Loading() {
-    return <div>Carregando a longa query!</div>;
+    return <Container>Aguarde, carregando os dados!</Container>;
 }
 
 export default Loading;

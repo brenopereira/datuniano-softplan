@@ -8,7 +8,6 @@ export interface Country {
 
 export interface CountryState {
     countries: Country[];
-    loading: boolean;
 }
 
 export const COUNTRY_COMPLETE = '@COUNTRY/COUNTRY_COMPLETE';

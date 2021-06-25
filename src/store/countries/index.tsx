@@ -6,7 +6,6 @@ import {
 } from './types';
 
 const initialState: CountryState = {
-    loading: false,
     countries: []
 };
 
@@ -17,15 +16,13 @@ export function country(
     switch (action.type) {
         case COUNTRY_LOADING: {
             return {
-                ...state,
-                loading: true
+                ...state
             };
         }
 
         case COUNTRY_COMPLETE: {
             return {
                 ...state,
-                loading: false,
                 countries: action.payload
             };
         }

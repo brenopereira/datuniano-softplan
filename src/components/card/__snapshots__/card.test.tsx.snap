@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Validate render Card component 1`] = `
+.c0 {
+  width: auto;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 5px 10px 0px #00000024;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0.9 0 0;
+  -ms-flex: 0.9 0 0;
+  flex: 0.9 0 0;
+}
+
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito Sans',sans-serif;
+  color: #5c5cff;
+  font-weight: bold;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito Sans',sans-serif;
+  color: #515151;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+<a
+  className="c0"
+  href="/country/Brazil"
+>
+  <div
+    className="c1"
+  >
+    <h2
+      className="c2"
+    >
+      Brazil
+    </h2>
+    <h3
+      className="c3"
+    >
+      Brasília
+    </h3>
+  </div>
+  <div
+    className=""
+  >
+    🇧🇷
+  </div>
+</a>
+`;

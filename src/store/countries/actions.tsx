@@ -45,12 +45,12 @@ function fetchSingleComplete(payload: Country) {
     };
 }
 
-function updateSingleCountry(payload: Country) {
-    return {
-        type: COUNTRY_SINGLE_COMPLETE,
-        payload
-    };
-}
+// function updateSingleCountry(payload: Country) {
+//     return {
+//         type: COUNTRY_SINGLE_COMPLETE,
+//         payload
+//     };
+// }
 
 export const setLoadingCountries: ActionCreator<
     ThunkAction<Promise<any>, CountryState, null, CountryActionTypes>

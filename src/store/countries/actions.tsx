@@ -11,6 +11,7 @@ import {
     COUNTRY_LOADING,
     COUNTRY_COMPLETE,
     COUNTRY_SEARCH,
+    COUNTRY_SINGLE_COMPLETE,
     Country
 } from './types';
 
@@ -30,6 +31,13 @@ function fetchComplete(payload: Country[]) {
 function searchCountry(payload: string) {
     return {
         type: COUNTRY_SEARCH,
+        payload
+    };
+}
+
+function fetchSingleComplete(payload: Country) {
+    return {
+        type: COUNTRY_SINGLE_COMPLETE,
         payload
     };
 }
@@ -65,8 +73,7 @@ export const getCountry: ActionCreator<
                 query: COUNTRY_FILTER(country)
             })
             .then(result => {
-                console.log(result);
-                // dispatch(fetchComplete(result.data.Country));
+                dispatch(fetchSingleComplete(result.data.Country[0]));
             });
     };
 };

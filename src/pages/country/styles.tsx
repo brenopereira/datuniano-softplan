@@ -30,3 +30,14 @@ export const Content = styled.div`
     border-radius: 4px;
     box-shadow: 0px 5px 10px 0px #00000024;
 `;
+
+export const Paragraph = styled.p`
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+`;
+
+export const Domain = styled.span`
+    color: #5c5cff;
+    display: block;
+    font-weight: bold;
+`;

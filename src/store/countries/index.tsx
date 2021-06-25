@@ -2,6 +2,7 @@ import {
     COUNTRY_LOADING,
     COUNTRY_COMPLETE,
     COUNTRY_SEARCH,
+    COUNTRY_SINGLE_COMPLETE,
     CountryActionTypes,
     CountryState
 } from './types';
@@ -50,6 +51,14 @@ export function country(
             return {
                 ...state,
                 countries: data
+            };
+        }
+
+        case COUNTRY_SINGLE_COMPLETE: {
+            return {
+                ...state,
+                loading: false,
+                country: action.payload
             };
         }
 

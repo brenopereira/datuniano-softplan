@@ -7,14 +7,7 @@ import { AppState } from '../../store';
 import { getCountry } from '../../store/countries/actions';
 import { CountryState } from '../../store/countries/types';
 
-import {
-    Container,
-    Logo,
-    PageTitle,
-    Content,
-    Paragraph,
-    Domain
-} from './styles';
+import { Container, Logo, PageTitle, Content, Paragraph } from './styles';
 
 interface AppProps {
     country: CountryState;

@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validate render Loading component 1`] = `
-<div
-  className="sc-bdnxRM eCsFZR"
->
-  Aguarde, carregando os dados!
-</div>
-`;

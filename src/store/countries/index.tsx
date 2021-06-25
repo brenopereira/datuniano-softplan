@@ -1,11 +1,14 @@
 import {
     COUNTRY_LOADING,
     COUNTRY_COMPLETE,
+    COUNTRY_SEARCH,
     CountryActionTypes,
     CountryState
 } from './types';
 
 const initialState: CountryState = {
+    loading: true,
+    search: [],
     countries: []
 };
 
@@ -22,8 +25,31 @@ export function country(
 
         case COUNTRY_COMPLETE: {
             return {
-                ...state,
+                loading: false,
+                search: action.payload,
                 countries: action.payload
+            };
+        }
+
+        case COUNTRY_SEARCH: {
+            let data = [];
+
+            data = state.countries;
+
+            if (action.payload.length) {
+                data = state.search.filter(
+                    item =>
+                        item.capital
+                            .toLowerCase()
+                            .indexOf(action.payload.toLowerCase()) > -1
+                );
+            } else {
+                data = state.search;
+            }
+
+            return {
+                ...state,
+                countries: data
             };
         }
 

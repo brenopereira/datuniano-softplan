@@ -1,23 +1,35 @@
 import { ActionCreator, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 
+import client from '../../services/api';
+
+import { COUNTRIES_QUERY, COUNTRY_FILTER } from '../../queries/countries';
+
 import {
     CountryState,
     CountryActionTypes,
     COUNTRY_LOADING,
     COUNTRY_COMPLETE,
+    COUNTRY_SEARCH,
     Country
 } from './types';
 
-export function fetchLoading() {
+function fetchLoading() {
     return {
         type: COUNTRY_LOADING
     };
 }
 
-export function fetchComplete(payload: Country[]) {
+function fetchComplete(payload: Country[]) {
     return {
         type: COUNTRY_COMPLETE,
+        payload
+    };
+}
+
+function searchCountry(payload: string) {
+    return {
+        type: COUNTRY_SEARCH,
         payload
     };
 }
@@ -34,6 +46,35 @@ export const setCountries: ActionCreator<
     ThunkAction<Promise<any>, CountryState, null, CountryActionTypes>
 > = (countries: Country[]) => {
     return async (dispatch: Dispatch) => {
-        dispatch(fetchComplete(countries));
+        client
+            .query({
+                query: COUNTRIES_QUERY
+            })
+            .then(result => {
+                dispatch(fetchComplete(result.data.Country));
+            });
+    };
+};
+
+export const getCountry: ActionCreator<
+    ThunkAction<Promise<any>, CountryState, null, CountryActionTypes>
+> = (country: string) => {
+    return async (dispatch: Dispatch) => {
+        client
+            .query({
+                query: COUNTRY_FILTER(country)
+            })
+            .then(result => {
+                console.log(result);
+                // dispatch(fetchComplete(result.data.Country));
+            });
+    };
+};
+
+export const countrySearchName: ActionCreator<
+    ThunkAction<Promise<any>, CountryState, null, CountryActionTypes>
+> = (country: string) => {
+    return async (dispatch: Dispatch) => {
+        dispatch(searchCountry(country));
     };
 };

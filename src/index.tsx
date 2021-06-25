@@ -9,18 +9,17 @@ import configureStore from './store';
 
 import GlobalStyle from './styles';
 
-import Home from './pages/home';
+// import Home from './pages/home';
+import CountryPage from './pages/country';
 
 const store = configureStore();
 
 ReactDOM.render(
-    <ApolloProvider client={client}>
-        <Provider store={store}>
-            <React.StrictMode>
-                <GlobalStyle />
-                <Home />
-            </React.StrictMode>
-        </Provider>
-    </ApolloProvider>,
+    <Provider store={store}>
+        <ApolloProvider client={client}>
+            <GlobalStyle />
+            <CountryPage />
+        </ApolloProvider>
+    </Provider>,
     document.getElementById('root')
 );

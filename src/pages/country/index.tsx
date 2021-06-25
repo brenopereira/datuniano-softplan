@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Loading } from '../../components';
 
 import { AppState } from '../../store';
-import { getCountry, updateCountryInfo } from '../../store/countries/actions';
+import { getCountry } from '../../store/countries/actions';
 import { CountryState } from '../../store/countries/types';
 
 import {
@@ -28,37 +28,11 @@ class CountryPage extends Component<AppProps> {
         this.props.getCountry(this.props.match.params.country);
     };
 
-    handleUpdateCountry = () => {
-        let test = {
-            Country: {
-                _id: '3',
-                __typename: 'Country',
-                capital: 'Teste',
-                name: 'Afghanistan',
-                population: 27657145,
-                area: 652230,
-                flag: {
-                    __typename: 'Flag',
-                    emoji: '🇦🇫'
-                },
-                topLevelDomains: {
-                    __typename: 'TopLevelDomain',
-                    name: '.af'
-                }
-            }
-        };
-
-        updateCountryInfo(this.props.match.params.country, test);
-    };
-
     render() {
         if (this.props.country.loading) return <Loading />;
 
         return (
             <Container>
-                <button onClick={this.handleUpdateCountry}>
-                    Atualizar data
-                </button>
                 <Link to='/'>
                     <Logo
                         src={require('../../assets/images/logo.svg').default}
